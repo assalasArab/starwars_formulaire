@@ -17,8 +17,10 @@ Python 3 doit être installé sur la machine.
 Ouvrez un terminal dans le répertoire du projet et exécutez la commande suivante :
 ```bash
 pip install flask flask-sqlalchemy
+```
 ### 3. Lancement de l'application
 Exécutez le script principal :
+```bash
 python app.py
 ```
 ## Le serveur sera accessible à l'adresse locale suivante : http://127.0.0.1:5000
