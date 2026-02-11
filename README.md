@@ -19,3 +19,5 @@ pip install flask flask-sqlalchemy
 ### 3. Lancement de l'application
 Exécutez le script principal :
 python app.py
+
+##Le serveur sera accessible à l'adresse locale suivante : http://127.0.0.1:5000
