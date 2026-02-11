@@ -1,0 +1,138 @@
+/* Police futuriste style cockpit */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --jedi-blue: #00d4ff;
+    --sith-red: #ff003c;
+    --rebel-orange: #ffcc00;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    background: #050505 url('https://www.transparenttextures.com/patterns/stardust.png');
+    color: white;
+    overflow: hidden;
+}
+
+/* Container principal avec effet de verre */
+.login-container {
+    background: var(--glass-bg);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.logo {
+    width: 180px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.5));
+}
+
+/* Style des champs de saisie */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--jedi-blue);
+    border-radius: 5px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    box-sizing: border-box;
+    transition: 0.3s;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 15px var(--jedi-blue);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+/* Groupe de boutons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* Bouton Ok / Valider (Jedi) */
+button[value="login"] {
+    background: transparent;
+    color: var(--jedi-blue);
+    border: 2px solid var(--jedi-blue);
+}
+
+button[value="login"]:hover {
+    background: var(--jedi-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--jedi-blue);
+}
+
+/* Bouton Reset (Sith) */
+button[type="reset"] {
+    background: transparent;
+    color: var(--sith-red);
+    border: 1px solid var(--sith-red);
+    font-size: 0.8em;
+}
+
+button[type="reset"]:hover {
+    background: var(--sith-red);
+    color: white;
+}
+
+/* Bouton Ajout Compte (Rebel) */
+button[value="register"] {
+    background: var(--rebel-orange);
+    color: black;
+}
+
+button[value="register"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--rebel-orange);
+}
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.success {
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
+.error {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

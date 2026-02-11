@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Login</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="https://pngimg.com/d/star_wars_logo_PNG13.png" class="logo" alt="Star Wars">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="message {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="/auth" method="POST">
+            <input type="text" name="identifiant" placeholder="Identifiant Galactique" required>
+            <input type="password" name="password" placeholder="Code de sécurité" required>
+            
+            <div class="button-group">
+                <button type="reset">Reset</button>
+                <button type="submit" name="action" value="login">Valider</button>
+                <button type="submit" name="action" value="register">Ajout Compte</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
